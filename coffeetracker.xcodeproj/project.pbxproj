@@ -13,6 +13,9 @@
 		682487F12A1EC418009B55D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682487F02A1EC418009B55D3 /* Preview Assets.xcassets */; };
 		682487F32A1EC418009B55D3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682487F22A1EC418009B55D3 /* Persistence.swift */; };
 		682487F62A1EC418009B55D3 /* coffeetracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 682487F42A1EC418009B55D3 /* coffeetracker.xcdatamodeld */; };
+		682B2B622A1FF33C00E6AE9A /* BeanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682B2B612A1FF33C00E6AE9A /* BeanListView.swift */; };
+		68891E242A2006A70085CDD7 /* BeanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68891E232A2006A70085CDD7 /* BeanDetailView.swift */; };
+		68891E282A20115F0085CDD7 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68891E272A20115F0085CDD7 /* ImagePickerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +26,9 @@
 		682487F02A1EC418009B55D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		682487F22A1EC418009B55D3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
 		682487F52A1EC418009B55D3 /* coffeetracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coffeetracker.xcdatamodel; sourceTree = "<group>"; };
+		682B2B612A1FF33C00E6AE9A /* BeanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanListView.swift; sourceTree = "<group>"; };
+		68891E232A2006A70085CDD7 /* BeanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanDetailView.swift; sourceTree = "<group>"; };
+		68891E272A20115F0085CDD7 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				682487EB2A1EC417009B55D3 /* ContentView.swift */,
 				682487ED2A1EC418009B55D3 /* Assets.xcassets */,
 				682487F22A1EC418009B55D3 /* Persistence.swift */,
+				682B2B612A1FF33C00E6AE9A /* BeanListView.swift */,
+				68891E232A2006A70085CDD7 /* BeanDetailView.swift */,
+				68891E272A20115F0085CDD7 /* ImagePickerView.swift */,
 				682487F42A1EC418009B55D3 /* coffeetracker.xcdatamodeld */,
 				682487EF2A1EC418009B55D3 /* Preview Content */,
 			);
@@ -143,8 +152,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				682B2B622A1FF33C00E6AE9A /* BeanListView.swift in Sources */,
 				682487F32A1EC418009B55D3 /* Persistence.swift in Sources */,
 				682487EC2A1EC417009B55D3 /* ContentView.swift in Sources */,
+				68891E242A2006A70085CDD7 /* BeanDetailView.swift in Sources */,
+				68891E282A20115F0085CDD7 /* ImagePickerView.swift in Sources */,
 				682487F62A1EC418009B55D3 /* coffeetracker.xcdatamodeld in Sources */,
 				682487EA2A1EC417009B55D3 /* coffeetrackerApp.swift in Sources */,
 			);
