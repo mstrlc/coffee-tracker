@@ -4,5 +4,18 @@
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="beanRoaster" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Roaster" inverseName="roasterBeans" inverseEntity="Roaster"/>
+        <fetchedProperty name="fetchedProperty" optional="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Roaster"/>
+        </fetchedProperty>
+        <fetchedProperty name="fetchedProperty1" optional="YES">
+            <fetchRequest name="fetchedPropertyFetchRequest" entity="Bean"/>
+        </fetchedProperty>
+    </entity>
+    <entity name="Roaster" representedClassName="Roaster" syncable="YES" codeGenerationType="class">
+        <attribute name="city" optional="YES" attributeType="String"/>
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="roasterBeans" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Bean" inverseName="beanRoaster" inverseEntity="Bean"/>
     </entity>
 </model>

@@ -31,14 +31,14 @@ struct ContentView: View {
                     }
                 }
             
-//            RoasterListView()
-//                .tag(ScreensEnum.Roasters)
-//                .tabItem {
-//                    VStack {
-//                        Image(systemName: "house")
-//                        Text("Roasters")
-//                    }
-//                }
+            RoasterListView()
+                .tag(ScreensEnum.Roasters)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "house")
+                        Text("Roasters")
+                    }
+                }
         }
     }
 }

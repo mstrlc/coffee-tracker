@@ -48,17 +48,17 @@ struct BeanListView: View {
                 .onDelete(perform: deleteItems)
             }
             .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
+                ToolbarItem(placement: .navigationBarLeading) {
                     EditButton()
                 }
-                ToolbarItem {
+                ToolbarItem(placement: .navigationBarTrailing) {
                     Button(action: addItem) {
-                        Label("Add Item", systemImage: "plus")
+                        Text("Add")
                     }
                 }
             }
             .navigationTitle("Beans")
-            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.large)
             .onDisappear {
                 // Save the viewContext
                 do {
@@ -78,15 +78,11 @@ struct BeanListView: View {
         }
     }
     
-    private func getBinding(for bean: Bean) -> Binding<Bean?> {
-        return Binding<Bean?>(
+    private func getBinding(for bean: Bean) -> Binding<Bean> {
+        return Binding<Bean>(
             get: { return bean },
             set: { newValue in
-                if let updatedBean = newValue {
-                    // Update the selected bean with new values
-                    bean.name = updatedBean.name
-                    // Update other properties as needed
-                }
+                bean.name = newValue.name
                 try? viewContext.save() // Save the changes to Core Data
             }
         )
