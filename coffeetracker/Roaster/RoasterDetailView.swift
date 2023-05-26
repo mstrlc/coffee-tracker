@@ -10,7 +10,7 @@ import SwiftUI
 struct RoasterDetailView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
-    @Binding var roaster: Roaster?
+    @Binding var roaster: Roaster
     
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Bean.name, ascending: true)],
@@ -22,15 +22,19 @@ struct RoasterDetailView: View {
     var body: some View {
         Form {
             Section("Name") {
-                TextField("Name", text: Binding(
-                    get: { roaster?.name ?? "" },
-                    set: { roaster?.name = $0 }
+                TextField("Name", text:Binding(
+                    get: { roaster.name ?? "" },
+                    set: { roaster.name = $0 }
                 ))
             }
-            Section("Country") {
-                TextField("Name", text: Binding(
-                    get: { roaster?.country ?? "" },
-                    set: { roaster?.country = $0 }
+            Section("Location") {
+                TextField("City", text: Binding(
+                    get: { roaster.city ?? "" },
+                    set: { roaster.city = $0 }
+                ))
+                TextField("Country", text: Binding(
+                    get: { roaster.country ?? "" },
+                    set: { roaster.country = $0 }
                 ))
             }
             Section("Beans") {

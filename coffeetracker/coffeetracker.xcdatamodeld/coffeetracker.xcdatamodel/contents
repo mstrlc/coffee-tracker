@@ -4,13 +4,22 @@
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="tastingNotes" optional="YES" attributeType="String"/>
+        <relationship name="beanBrews" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Brew" inverseName="brewBean" inverseEntity="Brew"/>
         <relationship name="beanRoaster" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Roaster" inverseName="roasterBeans" inverseEntity="Roaster"/>
-        <fetchedProperty name="fetchedProperty" optional="YES">
-            <fetchRequest name="fetchedPropertyFetchRequest" entity="Roaster"/>
-        </fetchedProperty>
-        <fetchedProperty name="fetchedProperty1" optional="YES">
-            <fetchRequest name="fetchedPropertyFetchRequest" entity="Bean"/>
-        </fetchedProperty>
+    </entity>
+    <entity name="Brew" representedClassName="Brew" syncable="YES" codeGenerationType="class">
+        <attribute name="clicks" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="coffeeWeight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="dateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="grinder" optional="YES" attributeType="String"/>
+        <attribute name="image" optional="YES" attributeType="Binary"/>
+        <attribute name="method" optional="YES" attributeType="String"/>
+        <attribute name="notes" optional="YES" attributeType="String"/>
+        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="time" optional="YES" attributeType="String"/>
+        <attribute name="waterWeight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="brewBean" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Bean" inverseName="beanBrews" inverseEntity="Bean"/>
     </entity>
     <entity name="Roaster" representedClassName="Roaster" syncable="YES" codeGenerationType="class">
         <attribute name="city" optional="YES" attributeType="String"/>

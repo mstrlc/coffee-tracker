@@ -1,5 +1,5 @@
 //
-//  RoasterListView.swift
+//  BrewListView.swift
 //  coffeetracker
 //
 //  Created by Matyáš Strelec on 26/05/2023.
@@ -7,27 +7,28 @@
 
 import SwiftUI
 
-struct RoasterListView: View {
-
+struct BrewListView: View {
+    
     @Environment(\.managedObjectContext) private var viewContext
 
-    @State private var selectedRoaster: Roaster?
+    @State private var selectedBrew: Brew?
     @State private var isSheetPresented = false
     
     @FetchRequest(
-        sortDescriptors: [NSSortDescriptor(keyPath: \Roaster.name, ascending: true)],
+        sortDescriptors: [NSSortDescriptor(keyPath: \Brew.dateTime, ascending: true)],
         animation: .default)
     
-    private var roasters: FetchedResults<Roaster>
+    private var brews: FetchedResults<Brew>
     let rowHeight: CGFloat = 70
     
+
     var body: some View {
         NavigationView {
             List {
-                ForEach(roasters) { roaster in
-                    NavigationLink(destination: RoasterDetailView(roaster: getBinding(for: roaster))) {
+                ForEach(brews) { brew in
+                    NavigationLink(destination: BrewDetailView(brew: getBinding(for: brew))) {
                         HStack {
-//                            if let imageData = bean.image, let uiImage = UIImage(data: imageData) {
+//                            if let imageData = brew.image, let uiImage = UIImage(data: imageData) {
 //                                Image(uiImage: uiImage)
 //                                    .resizable()
 //                                    .aspectRatio(contentMode: .fill) // Adjust the aspect ratio
@@ -38,11 +39,11 @@ struct RoasterListView: View {
 //                            }
                             VStack(alignment: .leading) {
                                 HStack {
-                                    Text(roaster.name ?? "")
+                                    Text(brew.dateTime != nil ? "\(brew.dateTime!)" : "")
                                         .bold()
-                                    Text("\(roaster.city ?? ""), \(roaster.country ?? "")")
+//                                    Text("\(brew.city ?? ""), \(brew.country ?? "")")
                                 }
-                                Text("12 beans, 32 total brews")
+                                Text("12 brews, 32 total brews")
                             }
                         }
                     }
@@ -59,7 +60,7 @@ struct RoasterListView: View {
                     }
                 }
             }
-            .navigationTitle("Roasters")
+            .navigationTitle("Brews")
             .navigationBarTitleDisplayMode(.large)
             .onDisappear {
                 // Save the viewContext
@@ -73,18 +74,18 @@ struct RoasterListView: View {
                 }
             }
         }
-        .sheet(item: $selectedRoaster) { roaster in
-            if let roaster = roaster {
-                RoasterDetailView(roaster: getBinding(for: roaster))
+        .sheet(item: $selectedBrew) { brew in
+            if let brew = brew {
+                BrewDetailView(brew: getBinding(for: brew))
             }
         }
     }
     
-    private func getBinding(for roaster: Roaster) -> Binding<Roaster> {
-        return Binding<Roaster>(
-            get: { return roaster },
+    private func getBinding(for brew: Brew) -> Binding<Brew> {
+        return Binding<Brew>(
+            get: { return brew },
             set: { newValue in
-                roaster.name = newValue.name
+                brew.dateTime = newValue.dateTime
                 try? viewContext.save() // Save the changes to Core Data
             }
         )
@@ -92,7 +93,7 @@ struct RoasterListView: View {
     
     private func addItem() {
         withAnimation {
-            let newRoaster = Roaster(context: viewContext)
+            let newBrew = Brew(context: viewContext)
 
 //            guard let image = UIImage(named: "NoneImage") else {
 //                fatalError("Failed to load image asset.")
@@ -102,14 +103,13 @@ struct RoasterListView: View {
 //                fatalError("Failed to convert image to JPEG data.")
 //            }
 
-            newRoaster.name = ""
-            newRoaster.country = ""
-            newRoaster.city = ""
-//            newRoaster.image = imageData
+            newBrew.dateTime = Date()
+
+            //            newbrew.image = imageData
 
             do {
                 try viewContext.save()
-                selectedRoaster = newRoaster // Set the selectedBean to the newly created bean
+                selectedBrew = newBrew // Set the selectedBean to the newly created bean
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
@@ -119,7 +119,7 @@ struct RoasterListView: View {
 
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
-            offsets.map { roasters[$0] }.forEach(viewContext.delete)
+            offsets.map { brews[$0] }.forEach(viewContext.delete)
             
             do {
                 try viewContext.save()
@@ -133,9 +133,8 @@ struct RoasterListView: View {
     }
 }
 
-
-struct RoasterListView_Previews: PreviewProvider {
+struct BrewListView_Previews: PreviewProvider {
     static var previews: some View {
-        RoasterListView()
+        BrewListView()
     }
 }
