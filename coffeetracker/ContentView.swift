@@ -61,8 +61,8 @@ struct ContentView: View {
                 .tag(ScreensEnum.settings)
                 .tabItem {
                     VStack {
-                        Image(systemName: "flame")
-                        Text("Roasters")
+                        Image(systemName: "gearshape")
+                        Text("Settings")
                     }
                 }
         }

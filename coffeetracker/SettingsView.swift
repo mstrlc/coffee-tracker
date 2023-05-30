@@ -16,20 +16,23 @@ struct SettingsView: View {
                     .frame(width: 100, height: 100)
                     .clipShape(RoundedRectangle(cornerRadius: 25))
                     .padding(10)
-                VStack {
+                VStack(alignment: .leading) {
                     Text("Coffee Tracker")
                         .bold()
                         .fontDesign(.rounded)
-                        .font(.title).foregroundColor(.accentColor)
+                        .font(.title)
+                        .foregroundColor(.accentColor)
+                    Text("Matyáš Strelec")
+                        .fontDesign(.rounded)
+                        .foregroundColor(.accentColor)
+                    Link("mstrlc.eu", destination: URL(string: "https://mstrlc.eu")!)
+                        .underline()
+                        .fontDesign(.rounded)
+                        .foregroundColor(.accentColor)
                 }
             }
+            .navigationBarTitle("Settings") // Set the navigation bar title here
         }
-        .navigationTitle("Settings")
-    }
-}
-
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView()
+        .navigationViewStyle(StackNavigationViewStyle()) // Optional: Set the navigation view style if needed
     }
 }
