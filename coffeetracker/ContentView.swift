@@ -5,44 +5,50 @@
 //  Created by Matyáš Strelec on 25/05/2023.
 //
 
-
-import SwiftUI
 import CoreData
+import SwiftUI
 
 enum ScreensEnum {
-    case Beans
-    case Roasters
-    case Brews
+    case timer
+    case beans
+    case roasters
+    case brews
 }
 
 struct ContentView: View {
-    
-    @State var currentScreen: ScreensEnum = .Beans
-    
+    @State var currentScreen: ScreensEnum = .timer
+
     var body: some View {
-        
         TabView(selection: $currentScreen) {
-            
+            TimerView()
+                .tag(ScreensEnum.timer)
+                .tabItem {
+                    VStack {
+                        Image(systemName: "clock")
+                        Text("Timer")
+                    }
+                }
+
             BeanListView()
-                .tag(ScreensEnum.Beans)
+                .tag(ScreensEnum.beans)
                 .tabItem {
                     VStack {
                         Image(systemName: "bag")
                         Text("Beans")
                     }
                 }
-            
+
             RoasterListView()
-                .tag(ScreensEnum.Roasters)
+                .tag(ScreensEnum.roasters)
                 .tabItem {
                     VStack {
                         Image(systemName: "flame")
                         Text("Roasters")
                     }
                 }
-            
+
             BrewListView()
-                .tag(ScreensEnum.Brews)
+                .tag(ScreensEnum.brews)
                 .tabItem {
                     VStack {
                         Image(systemName: "mug")

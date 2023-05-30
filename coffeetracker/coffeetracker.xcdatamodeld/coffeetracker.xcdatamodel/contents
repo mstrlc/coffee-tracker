@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22F66" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Bean" representedClassName="Bean" syncable="YES" codeGenerationType="class">
         <attribute name="desc" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
@@ -9,16 +9,16 @@
         <relationship name="beanRoaster" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Roaster" inverseName="roasterBeans" inverseEntity="Roaster"/>
     </entity>
     <entity name="Brew" representedClassName="Brew" syncable="YES" codeGenerationType="class">
-        <attribute name="clicks" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="coffeeWeight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="dateTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="clicks" optional="YES" attributeType="String"/>
+        <attribute name="coffeeWeight" optional="YES" attributeType="String" defaultValueString=""/>
+        <attribute name="dateTime" optional="YES" attributeType="Date" defaultDateTimeInterval="-978310800" usesScalarValueType="NO"/>
         <attribute name="grinder" optional="YES" attributeType="String"/>
         <attribute name="image" optional="YES" attributeType="Binary"/>
         <attribute name="method" optional="YES" attributeType="String"/>
         <attribute name="notes" optional="YES" attributeType="String"/>
-        <attribute name="rating" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="time" optional="YES" attributeType="String"/>
-        <attribute name="waterWeight" optional="YES" attributeType="Integer 16" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="rating" optional="YES" attributeType="String"/>
+        <attribute name="time" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="waterWeight" optional="YES" attributeType="String" defaultValueString=""/>
         <relationship name="brewBean" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Bean" inverseName="beanBrews" inverseEntity="Bean"/>
     </entity>
     <entity name="Roaster" representedClassName="Roaster" syncable="YES" codeGenerationType="class">

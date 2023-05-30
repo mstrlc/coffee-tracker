@@ -16,6 +16,12 @@
 		682B2B622A1FF33C00E6AE9A /* BeanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682B2B612A1FF33C00E6AE9A /* BeanListView.swift */; };
 		68891E242A2006A70085CDD7 /* BeanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68891E232A2006A70085CDD7 /* BeanDetailView.swift */; };
 		68891E282A20115F0085CDD7 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68891E272A20115F0085CDD7 /* ImagePickerView.swift */; };
+		689180B52A22086A00EE9A9B /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689180B42A22086A00EE9A9B /* TimerView.swift */; };
+		689180B72A22A1EC00EE9A9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689180B62A22A1EC00EE9A9B /* LaunchScreen.storyboard */; };
+		689843CD2A21003C0048750A /* RoasterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689843CC2A21003C0048750A /* RoasterListView.swift */; };
+		689843CF2A2101710048750A /* RoasterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689843CE2A2101710048750A /* RoasterDetailView.swift */; };
+		689843D42A2151CA0048750A /* BrewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689843D32A2151CA0048750A /* BrewListView.swift */; };
+		689843D62A215F950048750A /* BrewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689843D52A215F950048750A /* BrewDetailView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,11 +30,17 @@
 		682487EB2A1EC417009B55D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		682487ED2A1EC418009B55D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		682487F02A1EC418009B55D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		682487F22A1EC418009B55D3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; };
+		682487F22A1EC418009B55D3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; usesTabs = 1; };
 		682487F52A1EC418009B55D3 /* coffeetracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coffeetracker.xcdatamodel; sourceTree = "<group>"; };
-		682B2B612A1FF33C00E6AE9A /* BeanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanListView.swift; sourceTree = "<group>"; };
-		68891E232A2006A70085CDD7 /* BeanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanDetailView.swift; sourceTree = "<group>"; };
+		682B2B612A1FF33C00E6AE9A /* BeanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanListView.swift; sourceTree = "<group>"; usesTabs = 1; };
+		68891E232A2006A70085CDD7 /* BeanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanDetailView.swift; sourceTree = "<group>"; usesTabs = 1; };
 		68891E272A20115F0085CDD7 /* ImagePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		689180B42A22086A00EE9A9B /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
+		689180B62A22A1EC00EE9A9B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		689843CC2A21003C0048750A /* RoasterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterListView.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
+		689843CE2A2101710048750A /* RoasterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterDetailView.swift; sourceTree = "<group>"; usesTabs = 1; };
+		689843D32A2151CA0048750A /* BrewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListView.swift; sourceTree = "<group>"; usesTabs = 1; wrapsLines = 0; };
+		689843D52A215F950048750A /* BrewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDetailView.swift; sourceTree = "<group>"; usesTabs = 1; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,13 +73,16 @@
 		682487E82A1EC417009B55D3 /* coffeetracker */ = {
 			isa = PBXGroup;
 			children = (
+				689180B62A22A1EC00EE9A9B /* LaunchScreen.storyboard */,
+				68FF5A762A267F9E00EE4CA4 /* Common */,
+				689843CB2A2100280048750A /* Roaster */,
+				689843CA2A21001F0048750A /* Bean */,
+				689843D22A214C860048750A /* Brew */,
+				68FF5A772A26812A00EE4CA4 /* Timer */,
 				682487E92A1EC417009B55D3 /* coffeetrackerApp.swift */,
 				682487EB2A1EC417009B55D3 /* ContentView.swift */,
 				682487ED2A1EC418009B55D3 /* Assets.xcassets */,
 				682487F22A1EC418009B55D3 /* Persistence.swift */,
-				682B2B612A1FF33C00E6AE9A /* BeanListView.swift */,
-				68891E232A2006A70085CDD7 /* BeanDetailView.swift */,
-				68891E272A20115F0085CDD7 /* ImagePickerView.swift */,
 				682487F42A1EC418009B55D3 /* coffeetracker.xcdatamodeld */,
 				682487EF2A1EC418009B55D3 /* Preview Content */,
 			);
@@ -80,6 +95,49 @@
 				682487F02A1EC418009B55D3 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		689843CA2A21001F0048750A /* Bean */ = {
+			isa = PBXGroup;
+			children = (
+				682B2B612A1FF33C00E6AE9A /* BeanListView.swift */,
+				68891E232A2006A70085CDD7 /* BeanDetailView.swift */,
+			);
+			path = Bean;
+			sourceTree = "<group>";
+		};
+		689843CB2A2100280048750A /* Roaster */ = {
+			isa = PBXGroup;
+			children = (
+				689843CC2A21003C0048750A /* RoasterListView.swift */,
+				689843CE2A2101710048750A /* RoasterDetailView.swift */,
+			);
+			path = Roaster;
+			sourceTree = "<group>";
+		};
+		689843D22A214C860048750A /* Brew */ = {
+			isa = PBXGroup;
+			children = (
+				689843D32A2151CA0048750A /* BrewListView.swift */,
+				689843D52A215F950048750A /* BrewDetailView.swift */,
+			);
+			path = Brew;
+			sourceTree = "<group>";
+		};
+		68FF5A762A267F9E00EE4CA4 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				68891E272A20115F0085CDD7 /* ImagePickerView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		68FF5A772A26812A00EE4CA4 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				689180B42A22086A00EE9A9B /* TimerView.swift */,
+			);
+			path = Timer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -140,6 +198,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				689180B72A22A1EC00EE9A9B /* LaunchScreen.storyboard in Resources */,
 				682487F12A1EC418009B55D3 /* Preview Assets.xcassets in Resources */,
 				682487EE2A1EC418009B55D3 /* Assets.xcassets in Resources */,
 			);
@@ -152,13 +211,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				689843D42A2151CA0048750A /* BrewListView.swift in Sources */,
+				689843CF2A2101710048750A /* RoasterDetailView.swift in Sources */,
+				689843D62A215F950048750A /* BrewDetailView.swift in Sources */,
 				682B2B622A1FF33C00E6AE9A /* BeanListView.swift in Sources */,
 				682487F32A1EC418009B55D3 /* Persistence.swift in Sources */,
+				689180B52A22086A00EE9A9B /* TimerView.swift in Sources */,
 				682487EC2A1EC417009B55D3 /* ContentView.swift in Sources */,
 				68891E242A2006A70085CDD7 /* BeanDetailView.swift in Sources */,
 				68891E282A20115F0085CDD7 /* ImagePickerView.swift in Sources */,
 				682487F62A1EC418009B55D3 /* coffeetracker.xcdatamodeld in Sources */,
 				682487EA2A1EC417009B55D3 /* coffeetrackerApp.swift in Sources */,
+				689843CD2A21003C0048750A /* RoasterListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,10 +359,11 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -328,10 +393,11 @@
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

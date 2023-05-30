@@ -5,8 +5,8 @@
 //  Created by Matyáš Strelec on 25/05/2023.
 //
 
-import SwiftUI
 import CoreData
+import SwiftUI
 
 struct BeanListView: View {
 
@@ -14,14 +14,16 @@ struct BeanListView: View {
 
     @State private var selectedBean: Bean?
     @State private var isSheetPresented = false
-    
+
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Bean.name, ascending: true)],
-        animation: .default)
-    
+        animation: .default
+    )
+
     private var beans: FetchedResults<Bean>
+
     let rowHeight: CGFloat = 70
-    
+
     var body: some View {
         NavigationView {
             List {
@@ -31,16 +33,17 @@ struct BeanListView: View {
                             if let imageData = bean.image, let uiImage = UIImage(data: imageData) {
                                 Image(uiImage: uiImage)
                                     .resizable()
-                                    .aspectRatio(contentMode: .fill) // Adjust the aspect ratio
-                                    .frame(width: rowHeight, height: rowHeight) // Set the desired image size
-                                    .clipped() // Clip the image to maintain the aspect ratio
-                                    .cornerRadius(8) // Add corner radius for a square look
+                                    .aspectRatio(contentMode: .fill)
+                                    .frame(width: rowHeight, height: rowHeight)
+                                    .clipped()
+                                    .cornerRadius(8)
                                     .padding(.trailing, 10)
                             }
                             VStack(alignment: .leading) {
-                                Text(bean.name ?? "")
+                                Text(bean.name ?? "None")
                                     .bold()
-                                Text(bean.desc ?? "")
+                                Text(bean.beanRoaster?.name ?? "")
+                                Text(bean.tastingNotes ?? "")
                             }
                         }
                     }
@@ -60,34 +63,29 @@ struct BeanListView: View {
             .navigationTitle("Beans")
             .navigationBarTitleDisplayMode(.large)
             .onDisappear {
-                // Save the viewContext
                 do {
                     try viewContext.save()
                 } catch {
-                    // Replace this implementation with code to handle the error appropriately.
-                    // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                     let nsError = error as NSError
                     fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
                 }
             }
         }
         .sheet(item: $selectedBean) { bean in
-            if let bean = bean {
-                BeanDetailView(bean: getBinding(for: bean))
-            }
+            BeanDetailView(bean: getBinding(for: bean))
         }
     }
-    
+
     private func getBinding(for bean: Bean) -> Binding<Bean> {
         return Binding<Bean>(
-            get: { return bean },
+            get: { bean },
             set: { newValue in
                 bean.name = newValue.name
-                try? viewContext.save() // Save the changes to Core Data
+                try? viewContext.save()
             }
         )
     }
-    
+
     private func addItem() {
         withAnimation {
             let newBean = Bean(context: viewContext)
@@ -106,7 +104,7 @@ struct BeanListView: View {
 
             do {
                 try viewContext.save()
-                selectedBean = newBean // Set the selectedBean to the newly created bean
+                selectedBean = newBean
             } catch {
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
@@ -117,21 +115,13 @@ struct BeanListView: View {
     private func deleteItems(offsets: IndexSet) {
         withAnimation {
             offsets.map { beans[$0] }.forEach(viewContext.delete)
-            
+
             do {
                 try viewContext.save()
             } catch {
-                // Replace this implementation with code to handle the error appropriately.
-                // fatalError() causes the application to generate a crash log and terminate. You should not use this function in a shipping application, although it may be useful during development.
                 let nsError = error as NSError
                 fatalError("Unresolved error \(nsError), \(nsError.userInfo)")
             }
         }
-    }
-}
-
-struct BeanListView_Previews: PreviewProvider {
-    static var previews: some View {
-        BeanListView()
     }
 }

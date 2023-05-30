@@ -8,74 +8,86 @@
 import SwiftUI
 
 struct RoasterDetailView: View {
+
     @Environment(\.managedObjectContext) private var viewContext
 
     @Binding var roaster: Roaster
-    
+
     @FetchRequest(
         sortDescriptors: [NSSortDescriptor(keyPath: \Bean.name, ascending: true)],
-        animation: .default)
-    private var beans: FetchedResults<Bean>
-    let rowHeight: CGFloat = 70
+        animation: .default
+    )
 
+    private var beans: FetchedResults<Bean>
+
+    let rowHeight: CGFloat = 70
 
     var body: some View {
         Form {
             Section("Name") {
-                TextField("Name", text:Binding(
-                    get: { roaster.name ?? "" },
-                    set: { roaster.name = $0 }
-                ))
+                TextField(
+                    "Name",
+                    text: Binding(
+                        get: { roaster.name ?? "" },
+                        set: { roaster.name = $0 }
+                    ))
             }
             Section("Location") {
-                TextField("City", text: Binding(
-                    get: { roaster.city ?? "" },
-                    set: { roaster.city = $0 }
-                ))
-                TextField("Country", text: Binding(
-                    get: { roaster.country ?? "" },
-                    set: { roaster.country = $0 }
-                ))
+                HStack {
+                    TextField(
+                        "City",
+                        text: Binding(
+                            get: { roaster.city ?? "" },
+                            set: { roaster.city = $0 }
+                        ))
+                    TextField(
+                        "Country",
+                        text: Binding(
+                            get: { roaster.country ?? "" },
+                            set: { roaster.country = $0 }
+                        ))
+                }
             }
             Section("Beans") {
                 List {
                     ForEach(beans) { bean in
-                        if(bean.beanRoaster == roaster) {
-                            NavigationLink(destination: BeanDetailView(bean: getBinding(for: bean))) {
+                        if bean.beanRoaster == roaster {
+                            NavigationLink(destination: BeanDetailView(bean: getBinding(for: bean)))
+                            {
                                 HStack {
-                                    if let imageData = bean.image, let uiImage = UIImage(data: imageData) {
+                                    if let imageData = bean.image,
+                                        let uiImage = UIImage(data: imageData)
+                                    {
                                         Image(uiImage: uiImage)
                                             .resizable()
-                                            .aspectRatio(contentMode: .fill) // Adjust the aspect ratio
-                                            .frame(width: rowHeight, height: rowHeight) // Set the desired image size
-                                            .clipped() // Clip the image to maintain the aspect ratio
-                                            .cornerRadius(8) // Add corner radius for a square look
+                                            .aspectRatio(contentMode: .fill)
+                                            .frame(width: rowHeight, height: rowHeight)
+                                            .clipped()
+                                            .cornerRadius(8)
                                             .padding(.trailing, 10)
                                     }
                                     VStack(alignment: .leading) {
-                                        Text(bean.name ?? "")
+                                        Text(bean.name ?? "None")
                                             .bold()
                                         Text(bean.beanRoaster?.name ?? "")
+                                        Text(bean.tastingNotes ?? "")
                                     }
                                 }
                             }
                         }
-                   }
-               }
+                    }
+                }
             }
         }.navigationBarTitleDisplayMode(.inline)
     }
-    
-    
+
     private func getBinding(for bean: Bean) -> Binding<Bean> {
         return Binding<Bean>(
-            get: { return bean },
+            get: { bean },
             set: { newValue in
                 bean.name = newValue.name
-                try? viewContext.save() // Save the changes to Core Data
+                try? viewContext.save()
             }
         )
     }
-    
-
 }

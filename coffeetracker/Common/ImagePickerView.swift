@@ -9,9 +9,9 @@ import SwiftUI
 
 struct ImagePickerView: UIViewControllerRepresentable {
     @Binding var capturedImage: UIImage?
-    
+
     var onImageSelected: (UIImage?) -> Void
-    
+
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
     }
@@ -22,8 +22,7 @@ struct ImagePickerView: UIViewControllerRepresentable {
         return imagePicker
     }
 
-    func updateUIViewController(_ uiViewController: UIImagePickerController, context: Context) {
-    }
+    func updateUIViewController(_: UIImagePickerController, context _: Context) {}
 
     class Coordinator: NSObject, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
         let parent: ImagePickerView
@@ -32,11 +31,13 @@ struct ImagePickerView: UIViewControllerRepresentable {
             self.parent = parent
         }
 
-        func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]) {
+        func imagePickerController(
+            _ picker: UIImagePickerController,
+            didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey: Any]
+        ) {
             if let selectedImage = info[.originalImage] as? UIImage {
                 parent.capturedImage = selectedImage
-                parent.onImageSelected(selectedImage) // Call onImageSelected closure
-                
+                parent.onImageSelected(selectedImage)  // Call onImageSelected closure
             }
 
             picker.dismiss(animated: true, completion: nil)
