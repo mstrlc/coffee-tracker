@@ -9,7 +9,22 @@ import SwiftUI
 
 struct SettingsView: View {
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        NavigationView {
+            HStack {
+                Image("icon")
+                    .resizable()
+                    .frame(width: 100, height: 100)
+                    .clipShape(RoundedRectangle(cornerRadius: 25))
+                    .padding(10)
+                VStack {
+                    Text("Coffee Tracker")
+                        .bold()
+                        .fontDesign(.rounded)
+                        .font(.title).foregroundColor(.accentColor)
+                }
+            }
+        }
+        .navigationTitle("Settings")
     }
 }
 

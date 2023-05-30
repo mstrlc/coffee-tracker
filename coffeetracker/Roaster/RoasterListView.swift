@@ -70,31 +70,20 @@ struct RoasterListView: View {
         }
     }
 
-    private func getStats(_ roaster: Roaster) -> String {
-        let beansFetchRequest: NSFetchRequest<Bean> = Bean.fetchRequest()
-        let brewsFetchRequest: NSFetchRequest<Brew> = Brew.fetchRequest()
-
-        // Apply predicates to filter by roaster
-        let beansPredicate = NSPredicate(format: "beanRoaster == %@", roaster)
-        beansFetchRequest.predicate = beansPredicate
-
-        // Fetch the beans associated with the roaster
-        do {
-            let beans = try viewContext.fetch(beansFetchRequest)
-
-            let brewsPredicate = NSPredicate(format: "brewBean IN %@", beans)
-            brewsFetchRequest.predicate = brewsPredicate
-
-            let brews = try viewContext.fetch(brewsFetchRequest)
-
-            let beansCount = beans.count
-            let brewsCount = brews.count
-
-            return "Beans: \(beansCount) – Brews: \(brewsCount)"
-        } catch {
-            return "Error retrieving stats"
-        }
-    }
+	private func getStats(_ roaster: Roaster) -> String {
+		do {
+			let fetchRequest: NSFetchRequest<Bean> = Bean.fetchRequest()
+			let beans = try viewContext.fetch(fetchRequest)
+			
+			let filteredBeans = beans.filter { $0.beanRoaster == roaster }
+			
+			let beansCount = filteredBeans.count
+			
+			return "Beans: \(beansCount)"
+		} catch {
+			return "Error retrieving stats"
+		}
+	}
 
     private func getBinding(for roaster: Roaster) -> Binding<Roaster> {
         return Binding<Roaster>(

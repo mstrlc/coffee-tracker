@@ -78,7 +78,9 @@ struct RoasterDetailView: View {
                     }
                 }
             }
-        }.navigationBarTitleDisplayMode(.inline)
+        }
+		.navigationBarTitleDisplayMode(.inline)
+		.navigationTitle(roaster.name ?? "")
     }
 
     private func getBinding(for bean: Bean) -> Binding<Bean> {

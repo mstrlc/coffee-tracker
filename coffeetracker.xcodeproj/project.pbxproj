@@ -22,6 +22,7 @@
 		689843CF2A2101710048750A /* RoasterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689843CE2A2101710048750A /* RoasterDetailView.swift */; };
 		689843D42A2151CA0048750A /* BrewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689843D32A2151CA0048750A /* BrewListView.swift */; };
 		689843D62A215F950048750A /* BrewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689843D52A215F950048750A /* BrewDetailView.swift */; };
+		68FF5A792A26A16900EE4CA4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A782A26A16900EE4CA4 /* SettingsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +42,7 @@
 		689843CE2A2101710048750A /* RoasterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterDetailView.swift; sourceTree = "<group>"; usesTabs = 1; };
 		689843D32A2151CA0048750A /* BrewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListView.swift; sourceTree = "<group>"; usesTabs = 1; wrapsLines = 0; };
 		689843D52A215F950048750A /* BrewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDetailView.swift; sourceTree = "<group>"; usesTabs = 1; };
+		68FF5A782A26A16900EE4CA4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +83,7 @@
 				68FF5A772A26812A00EE4CA4 /* Timer */,
 				682487E92A1EC417009B55D3 /* coffeetrackerApp.swift */,
 				682487EB2A1EC417009B55D3 /* ContentView.swift */,
+				68FF5A782A26A16900EE4CA4 /* SettingsView.swift */,
 				682487ED2A1EC418009B55D3 /* Assets.xcassets */,
 				682487F22A1EC418009B55D3 /* Persistence.swift */,
 				682487F42A1EC418009B55D3 /* coffeetracker.xcdatamodeld */,
@@ -223,6 +226,7 @@
 				682487F62A1EC418009B55D3 /* coffeetracker.xcdatamodeld in Sources */,
 				682487EA2A1EC417009B55D3 /* coffeetrackerApp.swift in Sources */,
 				689843CD2A21003C0048750A /* RoasterListView.swift in Sources */,
+				68FF5A792A26A16900EE4CA4 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

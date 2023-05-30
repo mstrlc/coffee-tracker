@@ -136,6 +136,7 @@ struct BeanDetailView: View {
             }
         }
         .navigationBarTitleDisplayMode(.inline)
+		.navigationTitle(bean.name  ?? "")
     }
 
     private func formatDate(_ date: Date?) -> String {
