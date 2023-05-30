@@ -31,8 +31,8 @@ struct SettingsView: View {
                         .foregroundColor(.accentColor)
                 }
             }
-            .navigationBarTitle("Settings") // Set the navigation bar title here
+            .navigationBarTitle("Settings")  // Set the navigation bar title here
         }
-        .navigationViewStyle(StackNavigationViewStyle()) // Optional: Set the navigation view style if needed
+        .navigationViewStyle(StackNavigationViewStyle())  // Optional: Set the navigation view style if needed
     }
 }

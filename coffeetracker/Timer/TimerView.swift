@@ -5,6 +5,7 @@
 //  Created by Matyáš Strelec on 09/03/2023.
 //
 
+import Combine
 import SwiftUI
 
 struct TimerView: View {
@@ -12,17 +13,19 @@ struct TimerView: View {
     @Environment(\.managedObjectContext) private var viewContext
 
     @State private var stopwatchRunning = false
-    @State private var timer: Timer?
     @State private var stopwatchTime: Float = 0.0
     @State private var selectedBrew: Brew?
     @State private var isSheetPresented = false
+    @State private var cancellable: Cancellable?
+
+    private var timer = Timer.publish(every: 0.1, on: .main, in: .common).autoconnect()
 
     var body: some View {
         NavigationView {
             VStack {
                 Spacer()
                 Text(formatBrewTime(stopwatchTime))
-                    .font(.system(size: 36, weight: .black))
+                    .font(.system(size: 46, weight: .black))
                     .monospaced()
                 HStack {
                     Button {
@@ -74,16 +77,18 @@ struct TimerView: View {
     private func toggleTimer() {
         stopwatchRunning.toggle()
         if stopwatchRunning {
-            timer = Timer.scheduledTimer(withTimeInterval: 0.001, repeats: true) { _ in
-                stopwatchTime += 0.001
+            cancellable = timer.sink { _ in
+                stopwatchTime += 0.1
             }
         } else {
-            timer?.invalidate()
+            cancellable?.cancel()
+            cancellable = nil
         }
     }
 
     private func resetTimer() {
-        timer?.invalidate()
+        cancellable?.cancel()
+        cancellable = nil
         stopwatchTime = 0
         stopwatchRunning = false
     }
@@ -91,11 +96,11 @@ struct TimerView: View {
     private func formatBrewTime(_ time: Float) -> String {
         let min = Int(time / 60)
         let sec = Int(time.truncatingRemainder(dividingBy: 60))
-        let ms = Int((time.truncatingRemainder(dividingBy: 1)) * 1000)
+        let ms = Int((time.truncatingRemainder(dividingBy: 1)) * 10)
 
         let formattedMin = String(format: "%02d", min)
         let formattedSec = String(format: "%02d", sec)
-        let formattedMs = String(format: "%03d", ms)
+        let formattedMs = String(format: "%01d", ms)
 
         return "\(formattedMin):\(formattedSec).\(formattedMs)"
     }

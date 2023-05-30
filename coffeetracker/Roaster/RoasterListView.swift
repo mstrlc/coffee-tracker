@@ -70,20 +70,20 @@ struct RoasterListView: View {
         }
     }
 
-	private func getStats(_ roaster: Roaster) -> String {
-		do {
-			let fetchRequest: NSFetchRequest<Bean> = Bean.fetchRequest()
-			let beans = try viewContext.fetch(fetchRequest)
-			
-			let filteredBeans = beans.filter { $0.beanRoaster == roaster }
-			
-			let beansCount = filteredBeans.count
-			
-			return "Beans: \(beansCount)"
-		} catch {
-			return "Error retrieving stats"
-		}
-	}
+    private func getStats(_ roaster: Roaster) -> String {
+        do {
+            let fetchRequest: NSFetchRequest<Bean> = Bean.fetchRequest()
+            let beans = try viewContext.fetch(fetchRequest)
+
+            let filteredBeans = beans.filter { $0.beanRoaster == roaster }
+
+            let beansCount = filteredBeans.count
+
+            return "Beans: \(beansCount)"
+        } catch {
+            return "Error retrieving stats"
+        }
+    }
 
     private func getBinding(for roaster: Roaster) -> Binding<Roaster> {
         return Binding<Roaster>(

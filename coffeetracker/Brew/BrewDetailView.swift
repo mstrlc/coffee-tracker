@@ -167,17 +167,17 @@ struct BrewDetailView: View {
         .navigationTitle(brew.brewBean?.name ?? "")
     }
 
-    private func formatBrewTime(_ time: Float) -> String {
-        let min = Int(time / 60)
-        let sec = Int(time.truncatingRemainder(dividingBy: 60))
-        let ms = Int((time.truncatingRemainder(dividingBy: 1)) * 1000)
+	private func formatBrewTime(_ time: Float) -> String {
+		let min = Int(time / 60)
+		let sec = Int(time.truncatingRemainder(dividingBy: 60))
+		let ms = Int((time.truncatingRemainder(dividingBy: 1)) * 10)
 
-        let formattedMin = String(format: "%02d", min)
-        let formattedSec = String(format: "%02d", sec)
-        let formattedMs = String(format: "%03d", ms)
+		let formattedMin = String(format: "%02d", min)
+		let formattedSec = String(format: "%02d", sec)
+		let formattedMs = String(format: "%01d", ms)
 
-        return "\(formattedMin):\(formattedSec).\(formattedMs)"
-    }
+		return "\(formattedMin):\(formattedSec).\(formattedMs)"
+	}
 
     private func getBinding(for bean: Bean) -> Binding<Bean> {
         return Binding<Bean>(
