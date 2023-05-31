@@ -19,20 +19,17 @@ struct SettingsView: View {
                 VStack(alignment: .leading) {
                     Text("Coffee Tracker")
                         .bold()
-                        .fontDesign(.rounded)
                         .font(.title)
                         .foregroundColor(.accentColor)
                     Text("Matyáš Strelec")
-                        .fontDesign(.rounded)
                         .foregroundColor(.accentColor)
                     Link("mstrlc.eu", destination: URL(string: "https://mstrlc.eu")!)
                         .underline()
-                        .fontDesign(.rounded)
                         .foregroundColor(.accentColor)
                 }
             }
-            .navigationBarTitle("Settings")  // Set the navigation bar title here
+            .navigationBarTitle("Settings")
         }
-        .navigationViewStyle(StackNavigationViewStyle())  // Optional: Set the navigation view style if needed
+        .navigationViewStyle(StackNavigationViewStyle())
     }
 }

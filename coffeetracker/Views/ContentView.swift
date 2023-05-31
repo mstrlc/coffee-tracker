@@ -20,7 +20,9 @@ struct ContentView: View {
     @State var currentScreen: ScreensEnum = .timer
 
     var body: some View {
+        
         TabView(selection: $currentScreen) {
+            
             TimerView()
                 .tag(ScreensEnum.timer)
                 .tabItem {

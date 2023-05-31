@@ -89,6 +89,7 @@ struct BeanDetailView: View {
             }
             Section("Brews") {
                 List {
+                    // List of all brews filtered if the bean entity matches
                     ForEach(brews) { brew in
                         if brew.brewBean == bean {
                             NavigationLink(destination: BrewDetailView(brew: getBinding(for: brew)))
@@ -125,6 +126,7 @@ struct BeanDetailView: View {
         .listStyle(GroupedListStyle())
         .sheet(isPresented: $isShowingImagePicker) {
             ImagePickerView(capturedImage: $capturedImage) { image in
+                // Get the captured image
                 guard let image = image else { return }
                 capturedImage = image
 
@@ -154,7 +156,7 @@ struct BeanDetailView: View {
             get: { bean },
             set: { newValue in
                 bean.name = newValue.name
-                try? viewContext.save()  // Save the changes to Core Data
+                try? viewContext.save()
             }
         )
     }
@@ -164,7 +166,7 @@ struct BeanDetailView: View {
             get: { brew },
             set: { newValue in
                 brew.dateTime = newValue.dateTime
-                try? viewContext.save()  // Save the changes to Core Data
+                try? viewContext.save()
             }
         )
     }

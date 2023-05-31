@@ -77,16 +77,19 @@ struct TimerView: View {
     private func toggleTimer() {
         stopwatchRunning.toggle()
         if stopwatchRunning {
+            // Start the timer and use the sink operator to execute the closure for each timer tick
             cancellable = timer.sink { _ in
                 stopwatchTime += 0.1
             }
         } else {
+            // If the stopwatch is not running, cancel the timer and set cancellable to nil
             cancellable?.cancel()
             cancellable = nil
         }
     }
 
     private func resetTimer() {
+        // Cancel the timer and set cancellable to nil
         cancellable?.cancel()
         cancellable = nil
         stopwatchTime = 0

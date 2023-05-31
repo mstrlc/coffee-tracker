@@ -8,41 +8,39 @@
 
 /* Begin PBXBuildFile section */
 		682487EA2A1EC417009B55D3 /* coffeetrackerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682487E92A1EC417009B55D3 /* coffeetrackerApp.swift */; };
-		682487EC2A1EC417009B55D3 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682487EB2A1EC417009B55D3 /* ContentView.swift */; };
 		682487EE2A1EC418009B55D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682487ED2A1EC418009B55D3 /* Assets.xcassets */; };
-		682487F12A1EC418009B55D3 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 682487F02A1EC418009B55D3 /* Preview Assets.xcassets */; };
 		682487F32A1EC418009B55D3 /* Persistence.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682487F22A1EC418009B55D3 /* Persistence.swift */; };
 		682487F62A1EC418009B55D3 /* coffeetracker.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 682487F42A1EC418009B55D3 /* coffeetracker.xcdatamodeld */; };
-		682B2B622A1FF33C00E6AE9A /* BeanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 682B2B612A1FF33C00E6AE9A /* BeanListView.swift */; };
-		68891E242A2006A70085CDD7 /* BeanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68891E232A2006A70085CDD7 /* BeanDetailView.swift */; };
-		689180B52A22086A00EE9A9B /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689180B42A22086A00EE9A9B /* TimerView.swift */; };
 		689180B72A22A1EC00EE9A9B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 689180B62A22A1EC00EE9A9B /* LaunchScreen.storyboard */; };
-		689843CD2A21003C0048750A /* RoasterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689843CC2A21003C0048750A /* RoasterListView.swift */; };
-		689843CF2A2101710048750A /* RoasterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689843CE2A2101710048750A /* RoasterDetailView.swift */; };
-		689843D42A2151CA0048750A /* BrewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689843D32A2151CA0048750A /* BrewListView.swift */; };
-		689843D62A215F950048750A /* BrewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 689843D52A215F950048750A /* BrewDetailView.swift */; };
-		68FF5A792A26A16900EE4CA4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A782A26A16900EE4CA4 /* SettingsView.swift */; };
-		68FF5A7B2A26ACD700EE4CA4 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A7A2A26ACD600EE4CA4 /* ImagePickerView.swift */; };
+		68FF5A8F2A27AE2D00EE4CA4 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A802A27AE2D00EE4CA4 /* SettingsView.swift */; };
+		68FF5A902A27AE2D00EE4CA4 /* RoasterListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A822A27AE2D00EE4CA4 /* RoasterListView.swift */; };
+		68FF5A912A27AE2D00EE4CA4 /* RoasterDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A832A27AE2D00EE4CA4 /* RoasterDetailView.swift */; };
+		68FF5A922A27AE2D00EE4CA4 /* ImagePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A852A27AE2D00EE4CA4 /* ImagePickerView.swift */; };
+		68FF5A932A27AE2D00EE4CA4 /* BeanDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A872A27AE2D00EE4CA4 /* BeanDetailView.swift */; };
+		68FF5A942A27AE2D00EE4CA4 /* BeanListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A882A27AE2D00EE4CA4 /* BeanListView.swift */; };
+		68FF5A952A27AE2D00EE4CA4 /* TimerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A8A2A27AE2D00EE4CA4 /* TimerView.swift */; };
+		68FF5A962A27AE2D00EE4CA4 /* BrewListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A8C2A27AE2D00EE4CA4 /* BrewListView.swift */; };
+		68FF5A972A27AE2D00EE4CA4 /* BrewDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A8D2A27AE2D00EE4CA4 /* BrewDetailView.swift */; };
+		68FF5A982A27AE2D00EE4CA4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68FF5A8E2A27AE2D00EE4CA4 /* ContentView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		682487E62A1EC417009B55D3 /* coffeetracker.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = coffeetracker.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		682487E92A1EC417009B55D3 /* coffeetrackerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = coffeetrackerApp.swift; sourceTree = "<group>"; };
-		682487EB2A1EC417009B55D3 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		682487ED2A1EC418009B55D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		682487F02A1EC418009B55D3 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		682487F22A1EC418009B55D3 /* Persistence.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Persistence.swift; sourceTree = "<group>"; usesTabs = 1; };
 		682487F52A1EC418009B55D3 /* coffeetracker.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = coffeetracker.xcdatamodel; sourceTree = "<group>"; };
-		682B2B612A1FF33C00E6AE9A /* BeanListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanListView.swift; sourceTree = "<group>"; usesTabs = 1; };
-		68891E232A2006A70085CDD7 /* BeanDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeanDetailView.swift; sourceTree = "<group>"; usesTabs = 1; };
-		689180B42A22086A00EE9A9B /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 2; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; tabWidth = 2; usesTabs = 0; };
 		689180B62A22A1EC00EE9A9B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
-		689843CC2A21003C0048750A /* RoasterListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterListView.swift; sourceTree = "<group>"; tabWidth = 4; usesTabs = 1; };
-		689843CE2A2101710048750A /* RoasterDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoasterDetailView.swift; sourceTree = "<group>"; usesTabs = 1; };
-		689843D32A2151CA0048750A /* BrewListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewListView.swift; sourceTree = "<group>"; usesTabs = 1; wrapsLines = 0; };
-		689843D52A215F950048750A /* BrewDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BrewDetailView.swift; sourceTree = "<group>"; usesTabs = 1; };
-		68FF5A782A26A16900EE4CA4 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
-		68FF5A7A2A26ACD600EE4CA4 /* ImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		68FF5A802A27AE2D00EE4CA4 /* SettingsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		68FF5A822A27AE2D00EE4CA4 /* RoasterListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoasterListView.swift; sourceTree = "<group>"; };
+		68FF5A832A27AE2D00EE4CA4 /* RoasterDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoasterDetailView.swift; sourceTree = "<group>"; };
+		68FF5A852A27AE2D00EE4CA4 /* ImagePickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerView.swift; sourceTree = "<group>"; };
+		68FF5A872A27AE2D00EE4CA4 /* BeanDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanDetailView.swift; sourceTree = "<group>"; };
+		68FF5A882A27AE2D00EE4CA4 /* BeanListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BeanListView.swift; sourceTree = "<group>"; };
+		68FF5A8A2A27AE2D00EE4CA4 /* TimerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TimerView.swift; sourceTree = "<group>"; };
+		68FF5A8C2A27AE2D00EE4CA4 /* BrewListView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewListView.swift; sourceTree = "<group>"; };
+		68FF5A8D2A27AE2D00EE4CA4 /* BrewDetailView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BrewDetailView.swift; sourceTree = "<group>"; };
+		68FF5A8E2A27AE2D00EE4CA4 /* ContentView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,64 +73,79 @@
 		682487E82A1EC417009B55D3 /* coffeetracker */ = {
 			isa = PBXGroup;
 			children = (
+				68FF5A7E2A27AE2D00EE4CA4 /* Views */,
 				689180B62A22A1EC00EE9A9B /* LaunchScreen.storyboard */,
-				689843CB2A2100280048750A /* Roaster */,
-				689843CA2A21001F0048750A /* Bean */,
-				689843D22A214C860048750A /* Brew */,
-				68FF5A772A26812A00EE4CA4 /* Timer */,
 				682487E92A1EC417009B55D3 /* coffeetrackerApp.swift */,
-				682487EB2A1EC417009B55D3 /* ContentView.swift */,
-				68FF5A7A2A26ACD600EE4CA4 /* ImagePickerView.swift */,
-				68FF5A782A26A16900EE4CA4 /* SettingsView.swift */,
 				682487ED2A1EC418009B55D3 /* Assets.xcassets */,
 				682487F22A1EC418009B55D3 /* Persistence.swift */,
 				682487F42A1EC418009B55D3 /* coffeetracker.xcdatamodeld */,
-				682487EF2A1EC418009B55D3 /* Preview Content */,
 			);
 			path = coffeetracker;
 			sourceTree = "<group>";
 		};
-		682487EF2A1EC418009B55D3 /* Preview Content */ = {
+		68FF5A7E2A27AE2D00EE4CA4 /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				682487F02A1EC418009B55D3 /* Preview Assets.xcassets */,
+				68FF5A7F2A27AE2D00EE4CA4 /* Settings */,
+				68FF5A812A27AE2D00EE4CA4 /* Roaster */,
+				68FF5A842A27AE2D00EE4CA4 /* ImagePicker */,
+				68FF5A862A27AE2D00EE4CA4 /* Bean */,
+				68FF5A892A27AE2D00EE4CA4 /* Timer */,
+				68FF5A8B2A27AE2D00EE4CA4 /* Brew */,
+				68FF5A8E2A27AE2D00EE4CA4 /* ContentView.swift */,
 			);
-			path = "Preview Content";
+			path = Views;
 			sourceTree = "<group>";
 		};
-		689843CA2A21001F0048750A /* Bean */ = {
+		68FF5A7F2A27AE2D00EE4CA4 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				682B2B612A1FF33C00E6AE9A /* BeanListView.swift */,
-				68891E232A2006A70085CDD7 /* BeanDetailView.swift */,
+				68FF5A802A27AE2D00EE4CA4 /* SettingsView.swift */,
 			);
-			path = Bean;
+			path = Settings;
 			sourceTree = "<group>";
 		};
-		689843CB2A2100280048750A /* Roaster */ = {
+		68FF5A812A27AE2D00EE4CA4 /* Roaster */ = {
 			isa = PBXGroup;
 			children = (
-				689843CC2A21003C0048750A /* RoasterListView.swift */,
-				689843CE2A2101710048750A /* RoasterDetailView.swift */,
+				68FF5A822A27AE2D00EE4CA4 /* RoasterListView.swift */,
+				68FF5A832A27AE2D00EE4CA4 /* RoasterDetailView.swift */,
 			);
 			path = Roaster;
 			sourceTree = "<group>";
 		};
-		689843D22A214C860048750A /* Brew */ = {
+		68FF5A842A27AE2D00EE4CA4 /* ImagePicker */ = {
 			isa = PBXGroup;
 			children = (
-				689843D32A2151CA0048750A /* BrewListView.swift */,
-				689843D52A215F950048750A /* BrewDetailView.swift */,
+				68FF5A852A27AE2D00EE4CA4 /* ImagePickerView.swift */,
 			);
-			path = Brew;
+			path = ImagePicker;
 			sourceTree = "<group>";
 		};
-		68FF5A772A26812A00EE4CA4 /* Timer */ = {
+		68FF5A862A27AE2D00EE4CA4 /* Bean */ = {
 			isa = PBXGroup;
 			children = (
-				689180B42A22086A00EE9A9B /* TimerView.swift */,
+				68FF5A872A27AE2D00EE4CA4 /* BeanDetailView.swift */,
+				68FF5A882A27AE2D00EE4CA4 /* BeanListView.swift */,
+			);
+			path = Bean;
+			sourceTree = "<group>";
+		};
+		68FF5A892A27AE2D00EE4CA4 /* Timer */ = {
+			isa = PBXGroup;
+			children = (
+				68FF5A8A2A27AE2D00EE4CA4 /* TimerView.swift */,
 			);
 			path = Timer;
+			sourceTree = "<group>";
+		};
+		68FF5A8B2A27AE2D00EE4CA4 /* Brew */ = {
+			isa = PBXGroup;
+			children = (
+				68FF5A8C2A27AE2D00EE4CA4 /* BrewListView.swift */,
+				68FF5A8D2A27AE2D00EE4CA4 /* BrewDetailView.swift */,
+			);
+			path = Brew;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,7 +207,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				689180B72A22A1EC00EE9A9B /* LaunchScreen.storyboard in Resources */,
-				682487F12A1EC418009B55D3 /* Preview Assets.xcassets in Resources */,
 				682487EE2A1EC418009B55D3 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -206,19 +218,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				689843D42A2151CA0048750A /* BrewListView.swift in Sources */,
-				689843CF2A2101710048750A /* RoasterDetailView.swift in Sources */,
-				689843D62A215F950048750A /* BrewDetailView.swift in Sources */,
-				682B2B622A1FF33C00E6AE9A /* BeanListView.swift in Sources */,
+				68FF5A962A27AE2D00EE4CA4 /* BrewListView.swift in Sources */,
+				68FF5A972A27AE2D00EE4CA4 /* BrewDetailView.swift in Sources */,
+				68FF5A952A27AE2D00EE4CA4 /* TimerView.swift in Sources */,
+				68FF5A912A27AE2D00EE4CA4 /* RoasterDetailView.swift in Sources */,
 				682487F32A1EC418009B55D3 /* Persistence.swift in Sources */,
-				689180B52A22086A00EE9A9B /* TimerView.swift in Sources */,
-				682487EC2A1EC417009B55D3 /* ContentView.swift in Sources */,
-				68891E242A2006A70085CDD7 /* BeanDetailView.swift in Sources */,
+				68FF5A8F2A27AE2D00EE4CA4 /* SettingsView.swift in Sources */,
+				68FF5A932A27AE2D00EE4CA4 /* BeanDetailView.swift in Sources */,
 				682487F62A1EC418009B55D3 /* coffeetracker.xcdatamodeld in Sources */,
-				68FF5A7B2A26ACD700EE4CA4 /* ImagePickerView.swift in Sources */,
+				68FF5A922A27AE2D00EE4CA4 /* ImagePickerView.swift in Sources */,
+				68FF5A902A27AE2D00EE4CA4 /* RoasterListView.swift in Sources */,
+				68FF5A982A27AE2D00EE4CA4 /* ContentView.swift in Sources */,
+				68FF5A942A27AE2D00EE4CA4 /* BeanListView.swift in Sources */,
 				682487EA2A1EC417009B55D3 /* coffeetrackerApp.swift in Sources */,
-				689843CD2A21003C0048750A /* RoasterListView.swift in Sources */,
-				68FF5A792A26A16900EE4CA4 /* SettingsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +358,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"coffeetracker/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = J6P292P4C5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -359,7 +371,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -380,7 +392,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"coffeetracker/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = J6P292P4C5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -393,7 +405,7 @@
 				INFOPLIST_KEY_UIStatusBarStyle = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

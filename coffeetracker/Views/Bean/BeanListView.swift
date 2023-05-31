@@ -30,6 +30,7 @@ struct BeanListView: View {
                 ForEach(beans) { bean in
                     NavigationLink(destination: BeanDetailView(bean: getBinding(for: bean))) {
                         HStack {
+                            // Display image if exists
                             if let imageData = bean.image, let uiImage = UIImage(data: imageData) {
                                 Image(uiImage: uiImage)
                                     .resizable()
@@ -97,10 +98,9 @@ struct BeanListView: View {
             guard let imageData = image.jpegData(compressionQuality: 1.0) else {
                 fatalError("Failed to convert image to JPEG data.")
             }
-
+            
             newBean.name = ""
-            newBean.desc = ""
-            newBean.image = imageData
+            newBean.image = imageData // Add the image taken
 
             do {
                 try viewContext.save()

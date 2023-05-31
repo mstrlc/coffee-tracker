@@ -55,6 +55,7 @@ struct RoasterDetailView: View {
                             NavigationLink(destination: BeanDetailView(bean: getBinding(for: bean)))
                             {
                                 HStack {
+                                    // Display and image if it exists
                                     if let imageData = bean.image,
                                         let uiImage = UIImage(data: imageData)
                                     {

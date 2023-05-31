@@ -65,6 +65,7 @@ struct RoasterListView: View {
                 }
             }
         }
+        // When tapping Add, a new sheet opens
         .sheet(item: $selectedRoaster) { roaster in
             RoasterDetailView(roaster: getBinding(for: roaster))
         }
@@ -74,7 +75,8 @@ struct RoasterListView: View {
         do {
             let fetchRequest: NSFetchRequest<Bean> = Bean.fetchRequest()
             let beans = try viewContext.fetch(fetchRequest)
-
+            
+            // Filter the entities where the roaster matches
             let filteredBeans = beans.filter { $0.beanRoaster == roaster }
 
             let beansCount = filteredBeans.count
