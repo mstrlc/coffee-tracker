@@ -10,3 +10,4 @@ iPhone app for all your specialty coffee needs. Track your roasters, beans, and 
 - Change tasting notes as separate items
 ### Brew
 - Change method and grinder to a picker
+- Caffeine tracking (Health integration)
