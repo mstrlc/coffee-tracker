@@ -1,5 +1,10 @@
-# Coffee Tracker
+![banner](docs/banner.png)
 iPhone app for all your specialty coffee needs. Track your roasters, beans, and brews. Written as a school project in SwiftUI only, using CoreData for storage.
+
+## Screenshots
+![](docs/screenshots/bean_list.png)
+![](docs/screenshots/brew_detail.png)
+
 ## Todo
 ### General
 - Allow for import/export of data
